@@ -26,7 +26,6 @@ def main():
     # extract the content from each line
 
 
-    intersection_fifo = [[] for _ in range(I)]
     intersections_sortant = [[] for _ in range(I)]
     intersections_entrant = [[] for _ in range(I)]
 
