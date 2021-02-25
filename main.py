@@ -26,18 +26,25 @@ def main():
     # extract the content from each line
     intersections_sortant = [[] for _ in range(I)]
     intersections_entrant = [[] for _ in range(I)]
+    streets = []
     for i in range(S):
         B, E, street_name, L = input.Sline_content(Slines[i])
         # we store the value
         street = Street(B, E, street_name, L)
         intersections_sortant[B].append(street)
         intersections_entrant[E].append(street)
+        streets.append(street)
 
+    cars = []
     for i in range(V):
         P, streets_names = input.Vline_content(Vlines[i])
-        print(P, streets_names)
-
-
+        car_street = []
+        for street_name in streets_names:
+            for street in streets:
+                if(street.street_name == street_name)
+                    car_street.append(street)
+        car = Car(P, streets)
+        cars.append(car)
 
 
 if __name__ == '__main__':
@@ -48,10 +55,10 @@ if __name__ == '__main__':
 
 # street {s : int , e : int , l : L}
 
-# function ( [cars] , ST : simulation time) { 
+# function ( [cars] , ST : simulation time) {
 #   for i in [cars]:
 #       sum = 0
-#       for j in cars.[street] : 
+#       for j in cars.[street] :
 #           sum = sum + j.l
 #       if sum > ST [cars].remove(i)
 # }
