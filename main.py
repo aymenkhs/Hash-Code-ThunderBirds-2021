@@ -2,6 +2,7 @@ import argparse
 
 import input
 
+from classes import *
 
 def parse_arguments():
     parser = argparse.ArgumentParser()
@@ -19,13 +20,18 @@ def main():
     # separate the first line
     first_line, content = input.separate_first_line(content)
     # extract content from the first line
-    D, I, S, V, F = input.first_line_content(first_line)
+    D,I, S, V, F = input.first_line_content(first_line)
     # separate the folowing lines
     Slines, Vlines = input.separate_content(content, S)
     # extract the content from each line
+    intersections_sortant = [[] for _ in range(I)]
+    intersections_entrant = [[] for _ in range(I)]
     for i in range(S):
         B, E, street_name, L = input.Sline_content(Slines[i])
-        print(B,E,street_name,L)
+        # we store the value
+        street = Street(B, E, street_name, L)
+        intersections_sortant[B].append(street)
+        intersections_entrant[E].append(street)
 
     for i in range(V):
         P, streets_names = input.Vline_content(Vlines[i])
