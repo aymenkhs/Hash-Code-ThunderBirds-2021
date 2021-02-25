@@ -1,4 +1,8 @@
+class Intersection:
 
+    def __init__(self,id,state):
+        self.id = id
+        self.state = state
 
 
 class Street:
@@ -8,8 +12,6 @@ class Street:
         self.end = end
         self.street_name = string_name
         self.L = L
-        self.light = False
-        self.fifo = []
 
 
 class Car:
@@ -17,5 +19,3 @@ class Car:
     def __init__(self, ns, streets):
         self.streets = streets
         self.ns = ns
-        self.start = streets[0]
-        self.actual_street = self.start
