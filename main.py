@@ -1,8 +1,10 @@
 import argparse
 
 import input
+import output
 
 from classes import *
+
 
 def parse_arguments():
     parser = argparse.ArgumentParser()
@@ -49,6 +51,10 @@ def main():
                     car_street.append(street)
         car = Car(P, streets)
         cars.append(car)
+
+    output.write_file(output.outputs_files[args.file], intersections_entrant)
+
+
 
 
 if __name__ == '__main__':

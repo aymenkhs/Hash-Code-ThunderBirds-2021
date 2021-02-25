@@ -6,7 +6,7 @@ class Street:
     def __init__(self, start, end, street_name, L):
         self.start = start
         self.end = end
-        self.street_name = string_name
+        self.street_name = street_name
         self.L = L
         self.light = False
         self.fifo = []
