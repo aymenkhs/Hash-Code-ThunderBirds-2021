@@ -24,8 +24,12 @@ def main():
     # separate the folowing lines
     Slines, Vlines = input.separate_content(content, S)
     # extract the content from each line
+
+
     intersections_sortant = [[] for _ in range(I)]
     intersections_entrant = [[] for _ in range(I)]
+
+
     streets = []
     for i in range(S):
         B, E, street_name, L = input.Sline_content(Slines[i])

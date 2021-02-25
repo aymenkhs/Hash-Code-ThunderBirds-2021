@@ -3,17 +3,18 @@
 
 class Street:
 
-    def __init__(self, start, end, string_name, L):
+    def __init__(self, start, end, street_name, L):
         self.start = start
         self.end = end
-        self.string_name = string_name
+        self.street_name = string_name
         self.L = L
         self.light = False
+        self.fifo = []
 
 
 class Car:
 
-    def __init__(self, ns, streets, string_name, L):
+    def __init__(self, ns, streets):
         self.streets = streets
         self.ns = ns
         self.start = streets[0]
