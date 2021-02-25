@@ -41,7 +41,7 @@ def main():
         car_street = []
         for street_name in streets_names:
             for street in streets:
-                if(street.street_name == street_name)
+                if(street.street_name == street_name):
                     car_street.append(street)
         car = Car(P, streets)
         cars.append(car)
