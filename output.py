@@ -9,16 +9,15 @@ outputs_files = {
     "f": os.path.join("outputs", "f_forever_jammed.in"),
 }
 
-def write_file(file_path, schedules):
+def write_file(file_path, intersections):
     string = ""
-    string += str(len(schedules))
+    string += str(len(intersections))
     string += "\n"
-    for schedule in schedules:
-        string += str(schedule.nb)
-        string += " "
-        lights = " ".join(schedule.index_lights)
-        string += lights
-        string += "\n"
+    for intersection in intersections:
+        string += str(intersection.id) + "\n"
+        string += str(len(intersection.incomingSt)) + "\n"
+        for i in intersection.incomingSt:
+            string += str(i.nameStreet) + str(i.lightTime) + "\n"
 
     with open(file_path, "w") as file:
         content = file.write(string)
