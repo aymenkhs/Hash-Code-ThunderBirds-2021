@@ -36,3 +36,16 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+
+# car {ns : number of streets, [street] : list of streets}
+
+# street {s : int , e : int , l : L}
+
+# function ( [cars] , ST : simulation time) { 
+#   for i in [cars]:
+#       sum = 0
+#       for j in cars.[street] : 
+#           sum = sum + j.l
+#       if sum > ST [cars].remove(i)
+# }
